@@ -28,7 +28,7 @@ export default function Hero() {
               <img
                 alt="PhysiqueIQ"
                 src="./physiqueiq-logo-icon-only-emerald.svg"
-                className="h-18 w-auto"
+                className="h-12 sm:h-18 w-auto slide-in-from-right-translate-full animate-in shadow-lg"
               />
             </div>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
@@ -50,8 +50,7 @@ export default function Hero() {
                 Join the waitlist.
               </p>
               <div className="w-full">
-                <label className="text-sm/6 text-white">Email</label>
-                <div className="flex gap-4 w-full mt-1">
+                <div className="flex gap-4 w-full">
                   <Input
                     className="text-white max-w-[20rem]"
                     placeholder="Enter your email here"
