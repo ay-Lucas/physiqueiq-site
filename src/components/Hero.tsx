@@ -6,7 +6,7 @@ import { Input } from "./ui/input";
 export default function Hero() {
   return (
     <div>
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <div className="relative isolate">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -21,9 +21,16 @@ export default function Hero() {
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div>
-            <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-              PhysiqueIQ
-            </h1>
+            <div className="flex gap-4">
+              <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
+                PhysiqueIQ
+              </h1>
+              <img
+                alt="PhysiqueIQ"
+                src="./physiqueiq-logo-icon-only-emerald.svg"
+                className="h-18 w-auto"
+              />
+            </div>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
               PhysiqueIQ is the smarter way to measure physique change. Move
               beyond the scale with guided photos, body metrics, and AI-driven

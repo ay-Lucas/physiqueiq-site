@@ -12,17 +12,17 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="sticky inset-x-0 top-0 z-50 border-b border-white/10 bg-gray-950/60 backdrop-blur supports-[backdrop-filter]:bg-gray-950/40">
       <nav
         aria-label="Global"
-        className="flex items-center justify-between p-6 lg:px-8"
+        className="flex items-center justify-between py-4 px-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="#" className="-m-1.5 p-1.5 fill-lime-50">
+            <span className="sr-only">PhysiqueIQ</span>
             <img
-              alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+              alt="PhysiqueIQ"
+              src="./physiqueiq-logo-icon-only-white.svg"
               className="h-8 w-auto"
             />
           </a>
@@ -32,7 +32,6 @@ export default function Navbar() {
             type="button"
             onClick={() => {
               setMobileMenuOpen((bool) => !bool);
-              console.log("clicked");
             }}
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200 z-[100]"
           >
