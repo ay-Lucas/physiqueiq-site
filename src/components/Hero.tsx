@@ -2,10 +2,11 @@
 
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div>
+    <div className="h-screen">
       <div className="relative isolate">
         <div
           aria-hidden="true"
@@ -19,7 +20,7 @@ export default function Hero() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-emerald-600 to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="mx-auto max-w-2xl py-24 sm:py-32 lg:py-40">
           <div>
             <div className="flex gap-4">
               <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
@@ -36,30 +37,86 @@ export default function Hero() {
               beyond the scale with guided photos, body metrics, and AI-driven
               insights that make your progress clear, visual, and motivating.
             </p>
-            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 w-fit mt-4">
+            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 w-fit mt-6">
               <a href="#" className="font-semibold text-emerald-400">
                 <span aria-hidden="true" className="absolute inset-0" />
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
-            <div className="mt-14 flex flex-col items-start gap-4">
+            <div className="mt-12 sm:mt-16 flex flex-col items-start gap-4">
               <p className="text-4xl font-semibold text-white text-start">
                 Your physique is more than a number. Start tracking it right.
               </p>
               <p className="text-4xl font-semibold text-white text-start">
                 Join the waitlist.
               </p>
-              <div className="w-full">
-                <div className="flex gap-4 w-full">
+              <form
+                className="w-full"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget as HTMLFormElement;
+                  const data = new FormData(form);
+                  const email = String(data.get("email") || "");
+                  console.log("Waitlist email:", email);
+                }}
+              >
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
                   <Input
-                    className="text-white max-w-[20rem]"
-                    placeholder="Enter your email here"
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    inputMode="email"
+                    autoComplete="email"
+                    className="text-white flex-1 min-w-0"
+                    placeholder="Enter your email"
+                    aria-label="Email address"
                   />
-                  <a href="#">
-                    <Button>Join the Waitlist</Button>
-                  </a>
+                  <Button type="submit" className="sm:self-auto">
+                    Join the Waitlist
+                  </Button>
                 </div>
-              </div>
+              </form>
+            </div>
+          </div>
+          <div className="mt-8 sm:mt-20">
+            <p className="text-base sm:text-lg text-white">
+              Coming <b>Spring 2026</b> to the iOS App Store and Google Play.
+            </p>
+            <div className="mt-5 sm:mt-3 flex flex-wrap items-center gap-3 sm:gap-4">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download on the App Store"
+                title="Download on the App Store"
+                className="pointer-events-none"
+              >
+                <Image
+                  src="/download-on-the-app-store.svg"
+                  alt="Download on the App Store"
+                  width={158}
+                  height={48}
+                  className="h-11 md:h-12.25 w-auto"
+                />
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+                title="Get it on Google Play"
+                className="pointer-events-none"
+              >
+                <Image
+                  src="/en_badge_web_generic.png"
+                  alt="Get it on Google Play"
+                  width={192}
+                  height={56}
+                  className="h-16 md:h-18 w-auto"
+                />
+              </a>
             </div>
           </div>
         </div>
