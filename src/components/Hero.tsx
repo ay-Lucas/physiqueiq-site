@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="h-screen">
+    <div>
       <div className="relative isolate">
         <div
           aria-hidden="true"
@@ -22,28 +22,28 @@ export default function Hero() {
         </div>
         <div className="mx-auto max-w-2xl py-24 sm:py-32 lg:py-40">
           <div>
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
                 PhysiqueIQ
               </h1>
               <img
                 alt="PhysiqueIQ"
                 src="./physiqueiq-logo-icon-only-emerald.svg"
-                className="h-12 sm:h-18 w-auto slide-in-from-right-translate-full animate-in shadow-lg"
+                className="h-10 sm:h-12 md:h-14 w-auto slide-in-from-right-translate-full animate-in drop-shadow"
               />
             </div>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
+            <p className="mt-6 sm:mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
               PhysiqueIQ is the smarter way to measure physique change. Move
               beyond the scale with guided photos, body metrics, and AI-driven
               insights that make your progress clear, visual, and motivating.
             </p>
-            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 w-fit mt-6">
+            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 w-fit mt-5">
               <a href="#" className="font-semibold text-emerald-400">
                 <span aria-hidden="true" className="absolute inset-0" />
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
-            <div className="mt-12 sm:mt-16 flex flex-col items-start gap-4">
+            <div className="mt-10 sm:mt-12 flex flex-col items-start gap-4">
               <p className="text-4xl font-semibold text-white text-start">
                 Your physique is more than a number. Start tracking it right.
               </p>
@@ -79,11 +79,12 @@ export default function Hero() {
               </form>
             </div>
           </div>
-          <div className="mt-8 sm:mt-20">
-            <p className="text-base sm:text-lg text-white">
+          <div className="mt-8 sm:mt-10">
+            <p className="text-base sm:text-lg text-gray-300">
               Coming <b>Spring 2026</b> to the iOS App Store and Google Play.
             </p>
-            <div className="mt-5 sm:mt-3 flex flex-wrap items-center gap-3 sm:gap-4">
+
+            <div className="mt-4 sm:mt-5 flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4">
               <a
                 href="#"
                 target="_blank"
@@ -97,7 +98,7 @@ export default function Hero() {
                   alt="Download on the App Store"
                   width={158}
                   height={48}
-                  className="h-11 md:h-12.25 w-auto"
+                  className="h-11 md:h-14 w-auto"
                 />
               </a>
 
@@ -114,7 +115,7 @@ export default function Hero() {
                   alt="Get it on Google Play"
                   width={192}
                   height={56}
-                  className="h-16 md:h-18 w-auto"
+                  className="h-16 md:h-20 w-auto"
                 />
               </a>
             </div>
