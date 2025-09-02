@@ -29,8 +29,8 @@ export async function POST(req: Request) {
     // Optional: Add an idempotency key to prevent token reuse
     idempotencyKey: v4(),
     sandbox:
-      process.env.NODE_ENV === "development" ||
-      process.env.TURNSTILE_BYPASS === "true",
+      process.env.NODE_ENV === "development" &&
+      process.env.NEXT_PUBLIC_TURNSTILE_BYPASS !== "true",
   });
 
   if (!validationResponse.success) {

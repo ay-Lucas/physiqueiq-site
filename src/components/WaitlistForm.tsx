@@ -77,8 +77,8 @@ export default function WaitlistForm() {
           retry="auto"
           refreshExpired="auto"
           sandbox={
-            process.env.NODE_ENV === "development" ||
-            process.env.TURNSTILE_BYPASS === "true"
+            process.env.NODE_ENV === "development" &&
+            process.env.NEXT_PUBLIC_TURNSTILE_BYPASS !== "true"
           }
           onError={() => {
             setTurnstileStatus("error");
