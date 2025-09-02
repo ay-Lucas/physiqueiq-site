@@ -90,9 +90,9 @@ export default function WaitlistForm() {
           {loading ? "Joining…" : "Join waitlist"}
         </button>
       </div>
-
       {!loading && email && !locked && (
         <Turnstile
+          className="max-w-90"
           siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
           retry="auto"
           refreshExpired="auto"
