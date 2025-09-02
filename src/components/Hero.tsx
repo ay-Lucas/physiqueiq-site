@@ -3,6 +3,7 @@
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import Image from "next/image";
+import WaitlistForm from "./WaitlistForm";
 
 export default function Hero() {
   return (
@@ -50,33 +51,34 @@ export default function Hero() {
               <p className="text-4xl font-semibold text-white text-start">
                 Join the waitlist.
               </p>
-              <form
-                className="w-full"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  const form = e.currentTarget as HTMLFormElement;
-                  const data = new FormData(form);
-                  const email = String(data.get("email") || "");
-                  console.log("Waitlist email:", email);
-                }}
-              >
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    inputMode="email"
-                    autoComplete="email"
-                    className="text-white flex-1 min-w-0"
-                    placeholder="Enter your email"
-                    aria-label="Email address"
-                  />
-                  <Button type="submit" className="sm:self-auto">
-                    Join the Waitlist
-                  </Button>
-                </div>
-              </form>
+              <WaitlistForm />
+              {/* <form */}
+              {/*   className="w-full" */}
+              {/*   onSubmit={(e) => { */}
+              {/*     e.preventDefault(); */}
+              {/*     const form = e.currentTarget as HTMLFormElement; */}
+              {/*     const data = new FormData(form); */}
+              {/*     const email = String(data.get("email") || ""); */}
+              {/*     console.log("Waitlist email:", email); */}
+              {/*   }} */}
+              {/* > */}
+              {/*   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full"> */}
+              {/*     <Input */}
+              {/*       id="email" */}
+              {/*       name="email" */}
+              {/*       type="email" */}
+              {/*       required */}
+              {/*       inputMode="email" */}
+              {/*       autoComplete="email" */}
+              {/*       className="text-white flex-1 min-w-0" */}
+              {/*       placeholder="Enter your email" */}
+              {/*       aria-label="Email address" */}
+              {/*     /> */}
+              {/*     <Button type="submit" className="sm:self-auto"> */}
+              {/*       Join the Waitlist */}
+              {/*     </Button> */}
+              {/*   </div> */}
+              {/* </form> */}
             </div>
           </div>
           <div className="mt-8 sm:mt-10">
