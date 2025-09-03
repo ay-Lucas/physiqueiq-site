@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createClient } from "@supabase/supabase-js";
-import { validateTurnstileToken } from "next-turnstile";
-import { v4 } from "uuid";
+import { verifyTurnstile } from "@/lib/turnstile";
+import { markVerificationSent, upsertSignup } from "@/lib/waitlist";
+import { sendVerificationEmail } from "@/lib/email";
 
 const Body = z.object({
   email: z.email().trim(),
@@ -23,45 +23,37 @@ export async function POST(req: Request) {
   }
 
   const { email, source, turnstileToken } = parsed.data;
-  const validationResponse = await validateTurnstileToken({
-    token: turnstileToken,
-    secretKey: process.env.TURNSTILE_SECRET_KEY!,
-    // Optional: Add an idempotency key to prevent token reuse
-    idempotencyKey: v4(),
-    sandbox:
-      process.env.NODE_ENV === "development" &&
-      process.env.NEXT_PUBLIC_TURNSTILE_BYPASS !== "true",
-  });
 
-  if (!validationResponse.success) {
+  const isHuman = await verifyTurnstile(turnstileToken);
+  if (!isHuman) {
     return NextResponse.json(
       { ok: false, message: "Invalid token" },
       { status: 400 },
     );
   }
+  try {
+    const { id, token, confirmed } = await upsertSignup(email, ip, source);
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { auth: { persistSession: false } },
-  );
+    if (confirmed) {
+      return NextResponse.json(
+        { ok: false, error: "You're already on the list." },
+        { status: 409 },
+      );
+    }
 
-  const { data, error } = await supabase
-    .from("waitlist_signups")
-    .insert([{ email: email.toLowerCase(), source, metadata: { ip } }])
-    .select("id")
-    .single();
+    const send = await sendVerificationEmail({
+      to: email,
+      token,
+      origin: req.headers.get("origin") || undefined,
+    });
 
-  if (error) {
-    const duplicate = /duplicate|unique/i.test(error.message);
+    if (!send.error) await markVerificationSent(id, token);
+
+    return NextResponse.json({ ok: true, id });
+  } catch (e) {
     return NextResponse.json(
-      {
-        ok: false,
-        error: duplicate ? "You're already on the list." : "Server error.",
-      },
-      { status: duplicate ? 409 : 500 },
+      { ok: false, error: "Server error." },
+      { status: 500 },
     );
   }
-
-  return NextResponse.json({ ok: true, id: data.id });
 }

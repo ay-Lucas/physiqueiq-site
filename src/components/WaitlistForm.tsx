@@ -43,7 +43,7 @@ export default function WaitlistForm() {
     setLoading(false);
 
     if (r.ok && j.ok) {
-      setMsg("You're in!");
+      setMsg("Email verification sent.");
       setEmail("");
       setLocked(true); // lock after success
       setToken(null);
@@ -78,7 +78,6 @@ export default function WaitlistForm() {
             if (locked) {
               if (e.target.value !== email) setLocked(false);
             }
-            console.log(email);
           }}
           placeholder="you@example.com"
           className="w-full max-w-90 rounded-2xl border bg-white/5 px-4 py-3 text-white placeholder:text-gray-400"
