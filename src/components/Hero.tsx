@@ -1,9 +1,8 @@
 "use client";
 
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import Image from "next/image";
 import WaitlistForm from "./WaitlistForm";
+import Reveal from "@/components/Reveal";
 
 export default function Hero() {
   return (
@@ -23,35 +22,47 @@ export default function Hero() {
         </div>
         <div className="mx-auto max-w-2xl py-24 sm:py-32 lg:py-40">
           <div>
-            <div className="flex gap-3 sm:gap-4">
-              <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-                PhysiqueIQ
-              </h1>
-              <img
-                alt="PhysiqueIQ"
-                src="./physiqueiq-logo-icon-only-emerald.svg"
-                className="h-10 sm:h-12 md:h-14 w-auto slide-in-from-right-translate-full animate-in drop-shadow"
-              />
-            </div>
-            <p className="mt-6 sm:mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-              PhysiqueIQ is the smarter way to measure physique change. Move
-              beyond the scale with guided photos, body metrics, and AI-driven
-              insights that make your progress clear, visual, and motivating.
-            </p>
-            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 w-fit mt-5">
-              <a href="#" className="font-semibold text-emerald-400">
-                <span aria-hidden="true" className="absolute inset-0" />
-                Learn more <span aria-hidden="true">→</span>
-              </a>
-            </div>
+            <Reveal variant="slide-right">
+              <div className="flex gap-3 sm:gap-4">
+                <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
+                  PhysiqueIQ
+                </h1>
+                <img
+                  alt="PhysiqueIQ"
+                  src="./physiqueiq-logo-icon-only-emerald.svg"
+                  className="h-10 sm:h-12 md:h-14 w-auto drop-shadow"
+                />
+              </div>
+            </Reveal>
+            <Reveal variant="fade" delay={150}>
+              <p className="mt-6 sm:mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
+                PhysiqueIQ is the smarter way to measure physique change. Move
+                beyond the scale with guided photos, body metrics, and AI-driven
+                insights that make your progress clear, visual, and motivating.
+              </p>
+            </Reveal>
+            <Reveal variant="slide-up" delay={300}>
+              <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 w-fit mt-5">
+                <a href="#" className="font-semibold text-emerald-400">
+                  <span aria-hidden="true" className="absolute inset-0" />
+                  Learn more <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </Reveal>
             <div className="mt-10 sm:mt-12 flex flex-col items-start gap-4">
-              <p className="text-4xl font-semibold text-white text-start">
-                Your physique is more than a number. Start tracking it right.
-              </p>
-              <p className="text-4xl font-semibold text-white text-start">
-                Join the waitlist.
-              </p>
-              <WaitlistForm />
+              <Reveal variant="fade" delay={200}>
+                <p className="text-4xl font-semibold text-white text-start">
+                  Your physique is more than a number. Start tracking it right.
+                </p>
+              </Reveal>
+              <Reveal variant="fade" delay={350}>
+                <p className="text-4xl font-semibold text-white text-start">
+                  Join the waitlist.
+                </p>
+              </Reveal>
+              <Reveal variant="slide-up" delay={450} className="w-full">
+                <WaitlistForm />
+              </Reveal>
               {/* <form */}
               {/*   className="w-full" */}
               {/*   onSubmit={(e) => { */}
@@ -82,9 +93,11 @@ export default function Hero() {
             </div>
           </div>
           <div className="mt-8 sm:mt-10">
-            <p className="text-base sm:text-lg text-gray-300">
-              Coming <b>Spring 2026</b> to the iOS App Store and Google Play.
-            </p>
+            <Reveal variant="fade" delay={200}>
+              <p className="text-base sm:text-lg text-gray-300">
+                Coming <b>Spring 2026</b> to the iOS App Store and Google Play.
+              </p>
+            </Reveal>
 
             <div className="mt-4 sm:mt-5 flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4">
               <a
@@ -95,13 +108,15 @@ export default function Hero() {
                 title="Download on the App Store"
                 className="pointer-events-none"
               >
-                <Image
-                  src="/download-on-the-app-store.svg"
-                  alt="Download on the App Store"
-                  width={158}
-                  height={48}
-                  className="h-11 md:h-14 w-auto"
-                />
+                <Reveal variant="slide-up" delay={250}>
+                  <Image
+                    src="/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                    width={158}
+                    height={48}
+                    className="h-11 md:h-14 w-auto"
+                  />
+                </Reveal>
               </a>
 
               <a
@@ -112,13 +127,15 @@ export default function Hero() {
                 title="Get it on Google Play"
                 className="pointer-events-none"
               >
-                <Image
-                  src="/en_badge_web_generic.png"
-                  alt="Get it on Google Play"
-                  width={192}
-                  height={56}
-                  className="h-16 md:h-20 w-auto"
-                />
+                <Reveal variant="slide-up" delay={350}>
+                  <Image
+                    src="/en_badge_web_generic.png"
+                    alt="Get it on Google Play"
+                    width={192}
+                    height={56}
+                    className="h-16 md:h-20 w-auto"
+                  />
+                </Reveal>
               </a>
             </div>
           </div>
