@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import WaitlistForm from "./WaitlistForm";
 import Reveal from "@/components/Reveal";
 
 export default function Hero() {
@@ -56,40 +55,11 @@ export default function Hero() {
                 </p>
               </Reveal>
               <Reveal variant="fade" delay={350}>
-                <p className="text-4xl font-semibold text-white text-start">
-                  Join the waitlist.
+                <p className="max-w-xl text-lg text-gray-300 text-start sm:text-xl/8">
+                  Guided photos, body metrics, and AI-driven analysis in one
+                  place.
                 </p>
               </Reveal>
-              <Reveal variant="slide-up" delay={450} className="w-full">
-                <WaitlistForm />
-              </Reveal>
-              {/* <form */}
-              {/*   className="w-full" */}
-              {/*   onSubmit={(e) => { */}
-              {/*     e.preventDefault(); */}
-              {/*     const form = e.currentTarget as HTMLFormElement; */}
-              {/*     const data = new FormData(form); */}
-              {/*     const email = String(data.get("email") || ""); */}
-              {/*     console.log("Waitlist email:", email); */}
-              {/*   }} */}
-              {/* > */}
-              {/*   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full"> */}
-              {/*     <Input */}
-              {/*       id="email" */}
-              {/*       name="email" */}
-              {/*       type="email" */}
-              {/*       required */}
-              {/*       inputMode="email" */}
-              {/*       autoComplete="email" */}
-              {/*       className="text-white flex-1 min-w-0" */}
-              {/*       placeholder="Enter your email" */}
-              {/*       aria-label="Email address" */}
-              {/*     /> */}
-              {/*     <Button type="submit" className="sm:self-auto"> */}
-              {/*       Join the Waitlist */}
-              {/*     </Button> */}
-              {/*   </div> */}
-              {/* </form> */}
             </div>
           </div>
           <div className="mt-8 sm:mt-10">
