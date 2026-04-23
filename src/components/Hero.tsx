@@ -19,94 +19,62 @@ export default function Hero() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-emerald-600 to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
           />
         </div>
-        <div className="mx-auto max-w-2xl py-24 sm:py-32 lg:py-40">
+        <div className="mx-auto max-w-5xl py-24 sm:py-32 lg:py-36">
           <div>
+            <Reveal variant="fade">
+              <div className="inline-flex rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-300">
+                Track what the mirror shows
+              </div>
+            </Reveal>
             <Reveal variant="slide-right">
-              <div className="flex gap-3 sm:gap-4">
+              <div className="mt-6 flex gap-3 sm:gap-4">
                 <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
                   PhysiqueIQ
                 </h1>
-                <img
+                <Image
                   alt="PhysiqueIQ"
-                  src="./physiqueiq-logo-icon-only-emerald.svg"
-                  className="h-10 sm:h-12 md:h-14 w-auto drop-shadow"
+                  src="/physiqueiq-logo-icon-only-emerald.svg"
+                  width={56}
+                  height={56}
+                  className="h-10 w-auto drop-shadow sm:h-12 md:h-14"
                 />
               </div>
             </Reveal>
             <Reveal variant="fade" delay={150}>
-              <p className="mt-6 sm:mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-                PhysiqueIQ is the smarter way to measure physique change. Move
-                beyond the scale with guided photos, body metrics, and AI-driven
-                insights that make your progress clear, visual, and motivating.
+              <p className="mt-6 max-w-3xl text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+                A sharper way to track physique change with guided photos, body
+                metrics, and clear AI insights.
               </p>
             </Reveal>
             <Reveal variant="slide-up" delay={300}>
-              <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 w-fit mt-5">
-                <a href="#" className="font-semibold text-emerald-400">
-                  <span aria-hidden="true" className="absolute inset-0" />
-                  Learn more <span aria-hidden="true">→</span>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 w-fit">
+                  <a href="#product" className="font-semibold text-emerald-400">
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    See the product <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+                <a
+                  href="https://github.com/SCCapstone/Cockers"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-gray-200 transition-colors hover:border-white/20 hover:bg-white/8"
+                >
+                  View on GitHub
                 </a>
               </div>
             </Reveal>
-            <div className="mt-10 sm:mt-12 flex flex-col items-start gap-4">
+            <div className="mt-10 flex flex-col items-start gap-4 sm:mt-12">
               <Reveal variant="fade" delay={200}>
-                <p className="text-4xl font-semibold text-white text-start">
-                  Your physique is more than a number. Start tracking it right.
+                <p className="max-w-3xl text-4xl font-semibold text-white text-start">
+                  See physique progress with more clarity and less guesswork.
                 </p>
               </Reveal>
               <Reveal variant="fade" delay={350}>
-                <p className="max-w-xl text-lg text-gray-300 text-start sm:text-xl/8">
-                  Guided photos, body metrics, and AI-driven analysis in one
-                  place.
+                <p className="max-w-2xl text-lg text-gray-400 text-start sm:text-xl/8">
+                  Keep photos, measurements, and insights in one place.
                 </p>
               </Reveal>
-            </div>
-          </div>
-          <div className="mt-8 sm:mt-10">
-            <Reveal variant="fade" delay={200}>
-              <p className="text-base sm:text-lg text-gray-300">
-                Coming <b>Spring 2026</b> to the iOS App Store and Google Play.
-              </p>
-            </Reveal>
-
-            <div className="mt-4 sm:mt-5 flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Download on the App Store"
-                title="Download on the App Store"
-                className="pointer-events-none"
-              >
-                <Reveal variant="slide-up" delay={250}>
-                  <Image
-                    src="/download-on-the-app-store.svg"
-                    alt="Download on the App Store"
-                    width={158}
-                    height={48}
-                    className="h-11 md:h-14 w-auto"
-                  />
-                </Reveal>
-              </a>
-
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get it on Google Play"
-                title="Get it on Google Play"
-                className="pointer-events-none"
-              >
-                <Reveal variant="slide-up" delay={350}>
-                  <Image
-                    src="/en_badge_web_generic.png"
-                    alt="Get it on Google Play"
-                    width={192}
-                    height={56}
-                    className="h-16 md:h-20 w-auto"
-                  />
-                </Reveal>
-              </a>
             </div>
           </div>
         </div>
