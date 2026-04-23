@@ -1,25 +1,32 @@
+import { LucideLinkedin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const people = [
   {
     name: "Steven Dindl",
     imageUrl: "/profile_pictures/steven_profile.jpeg",
+    linkedinUrl: "https://www.linkedin.com/in/steven-dindl",
   },
   {
     name: "Lucas Anderson",
     imageUrl: "/profile_pictures/lucas_profile.png",
+    linkedinUrl: "https://www.linkedin.com/in/lucas-c-anderson",
   },
   {
     name: "Jacob Cabrey",
     imageUrl: "/profile_pictures/jacob_profile.png",
+    linkedinUrl: "https://www.linkedin.com/in/jacob-c-bbb5511ab/",
   },
   {
     name: "Trent Braley",
     imageUrl: "/profile_pictures/trent_profile.png",
+    linkedinUrl: "https://www.linkedin.com/in/trentbraley/",
   },
   {
     name: "Miles Wedeking",
     imageUrl: "/profile_pictures/miles_profile.jpeg",
+    linkedinUrl: "https://www.linkedin.com/in/miles-wedeking/",
   },
 ];
 
@@ -54,6 +61,14 @@ export default function Example() {
                   <h3 className="text-lg/7 font-semibold tracking-tight text-white">
                     {person.name}
                   </h3>
+                  <Link href={person.linkedinUrl} className="flex w-fit">
+                    <Image
+                      src={"/linkedin.png"}
+                      alt="linkedin logo"
+                      width={30}
+                      height={30}
+                    />
+                  </Link>
                   {/* <p className="text-sm/6 font-semibold text-indigo-400"> */}
                   {/*   {person.role} */}
                   {/* </p> */}
