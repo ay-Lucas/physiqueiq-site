@@ -56,18 +56,11 @@ function DemoSection() {
           </span>
         </Reveal>
 
-        <Reveal variant="slide-up" delay={100}>
-          <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            A quick walkthrough, right on the page.
-          </h2>
-        </Reveal>
-
-        <Reveal variant="fade" delay={180}>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-300">
-            Placeholder player for now. Drop in the final demo video when it is
-            ready.
-          </p>
-        </Reveal>
+        {/* <Reveal variant="slide-up" delay={100}> */}
+        {/*   <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl"> */}
+        {/*     A quick walkthrough, right on the page. */}
+        {/*   </h2> */}
+        {/* </Reveal> */}
 
         <Reveal variant="zoom" delay={240}>
           <div className="mt-10 overflow-hidden rounded-[2rem] border border-white/8 bg-[#0c1020] p-3 shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
@@ -91,10 +84,7 @@ function DemoSection() {
 
 function AppShowcase() {
   return (
-    <section
-      id="product"
-      className="relative pb-24 sm:pb-32"
-    >
+    <section id="product" className="relative pb-24 sm:pb-32">
       <div
         aria-hidden="true"
         className="absolute inset-x-10 top-24 -z-10 h-80 rounded-full bg-emerald-500/12 blur-3xl"
