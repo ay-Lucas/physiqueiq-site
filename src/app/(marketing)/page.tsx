@@ -67,8 +67,8 @@ function DemoSection() {
             <div className="aspect-video overflow-hidden rounded-[1.4rem] border border-white/8 bg-black">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube-nocookie.com/embed/M7lc1UVf-VE?rel=0"
-                title="PhysiqueIQ demo video placeholder"
+                src="https://www.youtube.com/embed/5lO7tnrbIXA?si=ZJoehfVHLyz7QG-i"
+                title="PhysiqueIQ demo video"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
